@@ -3,7 +3,7 @@ timeout = "1200s"
 # your website url
 baseURL = 'https://hdzh.me'
 # website title
-title = 'Diego Hernández & film'
+title = "Diego's digital garden"
 # don't touch this
 disableKinds = ["section", "taxonomy", "term", "home"]
 # robots.txt
@@ -22,5 +22,6 @@ defaultContentLanguage = 'es'
 
 # theme as module
 [module]
+replacements = "github.com/Sped0n/bridget -> bridget"
 [[module.imports]]
-path = "github.com/Sped0n/bridget" # deploy with git (recommended)  WARN: you should also set `bundled` to true in params.toml !!!
+path = "github.com/Sped0n/bridget"

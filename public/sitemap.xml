@@ -3,4 +3,7 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
             <loc>https://hdzh.me/about/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdzh.me/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>https://hdzh.me/abr2023/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdzh.me/ago2022/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdzh.me/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdzh.me/sep2022/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
