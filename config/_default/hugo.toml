@@ -1,7 +1,7 @@
 # timeout
 timeout = "1200s"
 # your website url
-baseURL = 'https://www.example.com/'
+baseURL = 'https://hdzh.me'
 # website title
 title = 'Diego Hernández & film'
 # don't touch this
