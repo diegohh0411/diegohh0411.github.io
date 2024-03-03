@@ -3,7 +3,7 @@ timeout = "1200s"
 # your website url
 baseURL = 'https://hdzh.me'
 # website title
-title = "Diego's digital garden"
+title = "Diego's journal"
 # don't touch this
 disableKinds = ["section", "taxonomy", "term", "home"]
 # robots.txt
