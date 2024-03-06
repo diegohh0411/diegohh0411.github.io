@@ -38,7 +38,7 @@ export class GalleryComponent implements AfterViewChecked {
 
   ngAfterViewChecked() {
     document.getElementById(this.f)?.scrollIntoView({
-      behavior: 'smooth',
+      behavior: 'instant',
       inline: "center"
     });
   }
