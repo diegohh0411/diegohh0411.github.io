@@ -1,3 +1,5 @@
+console.log('Building content...')
+
 const fs = require('fs')
 const crypto = require('crypto')
 const sharp = require("sharp");
@@ -37,6 +39,7 @@ folders.forEach(folder => {
 let contentsToWriteToFile = ''
 mappings.forEach(map => {
   contentsToWriteToFile += (contentsToWriteToFile === '' ? '' : '\n') + `/p/${map.uuid}`
+  contentsToWriteToFile += (contentsToWriteToFile === '' ? '' : '\n') + `/g/${map.uuid}`
 })
 fs.writeFileSync('./routes.txt', contentsToWriteToFile)
 
