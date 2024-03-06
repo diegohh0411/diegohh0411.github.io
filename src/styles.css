@@ -6,5 +6,5 @@
 @tailwind utilities;
 
 h1 {
-  @apply font-mono
+  @apply font-mono text-4xl
 }

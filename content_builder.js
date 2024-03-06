@@ -9,52 +9,31 @@ const folders = fs.readdirSync('./src/content');
 folders.forEach(folder => {
   try {
     const files = fs.readdirSync(`./src/content/${folder}`)
-    if (files.includes('index.md')) {
-      const indexContent = fs.readFileSync(`./src/content/${folder}/index.md`, { encoding: 'utf-8'})
-      const lines = indexContent.split('\n')
+    if (files.includes('index.json')) {
+      const index = JSON.parse(fs.readFileSync(`./src/content/${folder}/index.json`, { encoding: 'utf-8'}))
 
-      const frontMatterVariables = {}
-      let content = ''
+      index['parentFolder'] = folder;
 
-      let numberOfTimesThatThreeDashesHaveAppeared = 0;
-      for (let i = 0; i < lines.length; i++) {
-        if (lines[i].trim() === "---") {
-          numberOfTimesThatThreeDashesHaveAppeared += 1;
-        } else if (numberOfTimesThatThreeDashesHaveAppeared === 1) {
-          const keyAndValue = lines[i].split(':')
-          keyAndValue.forEach((keyOrValue, i) => {
-            keyAndValue[i] = keyOrValue.trim()
-          })
-
-          frontMatterVariables[keyAndValue[0]] = keyAndValue[1];
-        } else {
-          content += lines[i] + '\n';
-        }
+      if (!index.uuid) {
+        index.uuid = crypto.randomUUID()
       }
 
-      frontMatterVariables['content'] = content;
-
-      frontMatterVariables['parentFolder'] = folder;
-
-      if (!frontMatterVariables.uuid) {
-        frontMatterVariables.uuid = crypto.randomUUID()
-      }
-
-      frontMatterVariables['imageFilenames'] = []
+      index['imageFilenames'] = []
       const imageEndings = ['.jpg', '.JPG', '.png', '.PNG', '.tiff', '.TIFF']
       files.forEach(file => {
         if (imageEndings.some(ending => file.endsWith(ending))) {
-          frontMatterVariables['imageFilenames'].push(file)
+          index['imageFilenames'].push(file)
         }
       })
 
-      mappings.push(frontMatterVariables)
+      mappings.push(index)
     }
   } catch (e) {
 
   }
 })
 
+// ROUTES.TXT for parametrized Angular SSG
 let contentsToWriteToFile = ''
 mappings.forEach(map => {
   contentsToWriteToFile += (contentsToWriteToFile === '' ? '' : '\n') + `/p/${map.uuid}`
