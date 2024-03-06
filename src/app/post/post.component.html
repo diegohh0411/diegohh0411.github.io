@@ -13,6 +13,7 @@ px-4 mt-6
   class="px-4
   bg-gray-100
   cursor-pointer
+  rounded-2xl
   ">
     #{{tag}}
   </div>
@@ -31,6 +32,7 @@ pt-6 pb-[50vh]
 px-4
 relative
 "
+id="imageContainer"
 >
   <img *ngFor="let image of postMapping.imageFilenames"
   [src]="'assets/' + image + (md ? '_full.jpg' : '_800.jpg')"
@@ -38,8 +40,10 @@ relative
   object-contain max-h-[80vh]
   cursor-pointer
   sticky
-  transition-all ease-in-out duration-[5000ms]
+  transition-all ease-in-out duration-[7000ms]
   "
+
+  [style.scale]="math.random() * 0.3 + 1"
   [style.left]="math.random() * (md ? 80 : 50) + '%'"
   [style.top]="math.random() * 20 +  20 + 'vh'"
 

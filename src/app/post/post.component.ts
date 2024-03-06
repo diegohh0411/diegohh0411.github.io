@@ -47,8 +47,11 @@ export class PostComponent implements OnInit {
   }
 
   protected readonly math = Math;
-
-  ngOnInit() {
-    //setInterval(() => console.debug('.'), 5000)
+  async ngOnInit() {
+    for (let i = 0; i < 10; i++) {
+      setTimeout(() => {
+        console.debug('.')
+      }, i * 7000)
+    }
   }
 }
