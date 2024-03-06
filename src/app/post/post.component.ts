@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import { Router } from "@angular/router";
 import { mappings } from "../../content/mappings";
@@ -19,7 +19,7 @@ import anime from "animejs";
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, OnDestroy {
   postUuid: string = ''
   postMapping: any = {}
   constructor(
@@ -47,11 +47,20 @@ export class PostComponent implements OnInit {
   }
 
   protected readonly math = Math;
+
+  // @ts-ignore
+  timeouts: Timeout[] = []
   async ngOnInit() {
     for (let i = 0; i < 10; i++) {
-      setTimeout(() => {
+      this.timeouts.push(setTimeout(() => {
         console.debug('.')
-      }, i * 7000)
+      }, i * 7000))
     }
+  }
+
+  ngOnDestroy() {
+    this.timeouts.forEach(to => {
+      clearTimeout(to)
+    })
   }
 }
