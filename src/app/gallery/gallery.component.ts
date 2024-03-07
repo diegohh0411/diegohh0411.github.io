@@ -38,10 +38,15 @@ export class GalleryComponent implements AfterViewChecked {
 
   protected readonly math = Math;
 
+  haveAlreadyScrollendIntoView = false
   ngAfterViewChecked() {
-    document.getElementById(this.f)?.scrollIntoView({
-      behavior: 'instant',
-      inline: "center"
-    });
+    if (!this.haveAlreadyScrollendIntoView) {
+      document.getElementById(this.f)?.scrollIntoView({
+        behavior: 'instant',
+        inline: "center"
+      });
+      this.haveAlreadyScrollendIntoView = true
+      console.debug('Have scrolled into the view of the f image.')
+    }
   }
 }
