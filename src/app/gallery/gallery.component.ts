@@ -4,10 +4,12 @@ import { CommonModule } from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
 import {mappings} from "../../content/mappings";
 
+import { LazyLoadImageModule } from "ng-lazyload-image";
+
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LazyLoadImageModule],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
 })

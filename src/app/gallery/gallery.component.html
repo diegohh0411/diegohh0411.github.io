@@ -16,7 +16,9 @@ px-4
   </div>
 
   <img *ngFor="let image of postMapping.imageFilenames"
-  [src]="'assets/' + image + '_full.jpg'"
+  [defaultImage]="'assets/' + image + '_800.jpg'"
+  [lazyLoad]="'assets/' + image + '_full.jpg'"
+  [useSrcset]="true"
 
   [id]="image"
 
