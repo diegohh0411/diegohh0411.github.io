@@ -6,7 +6,7 @@ import { mappings } from "../../content/mappings";
 import { CommonModule } from "@angular/common";
 import { MarkdownComponent } from "ngx-markdown";
 
-import anime from "animejs";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
   selector: 'app-post',
@@ -16,6 +16,9 @@ import anime from "animejs";
     MarkdownComponent,
     RouterLink,
   ],
+  providers: [
+    CookieService
+  ],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })
@@ -24,7 +27,8 @@ export class PostComponent implements OnInit, OnDestroy {
   postMapping: any = {}
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private cookieService: CookieService
   ) {
     this.route.params.subscribe(params => {
       this.postUuid = params['uuid']
@@ -48,19 +52,16 @@ export class PostComponent implements OnInit, OnDestroy {
 
   protected readonly math = Math;
 
-  // @ts-ignore
-  timeouts: Timeout[] = []
+  hintIsHidden = false
   async ngOnInit() {
-    for (let i = 0; i < 10; i++) {
-      this.timeouts.push(setTimeout(() => {
-        console.debug('.')
-      }, i * 7000))
-    }
+    this.hintIsHidden = this.cookieService.get('hintIsHidden') === 'true'
+  }
+
+  hideHint() {
+    this.hintIsHidden = true
+    this.cookieService.set('hintIsHidden', 'true')
   }
 
   ngOnDestroy() {
-    this.timeouts.forEach(to => {
-      clearTimeout(to)
-    })
   }
 }

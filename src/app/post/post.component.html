@@ -19,11 +19,32 @@ px-4 mt-6
   </div>
 </div>
 
-<div class="px-4 mt-12
+<div class="mx-4 mt-12
 max-w-xl text-justify">
   <markdown>
     {{postMapping.content}}
   </markdown>
+</div>
+
+<div *ngIf="!hintIsHidden"
+class="
+bg-blue-100 rounded-2xl
+m-4 p-4
+flex items-center gap-4
+max-w-xl
+">
+  <p>
+    Puedes hacer clic en cualquier imagen para abrirla en pantalla completa.
+  </p>
+
+  <svg
+  (click)="hideHint()"
+  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+   class="w-12 h-12
+   mb-auto -mt-2
+   cursor-pointer">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+  </svg>
 </div>
 
 <div class="flex flex-col
@@ -40,10 +61,11 @@ id="imageContainer"
   object-contain max-h-[80vh]
   cursor-pointer
   sticky
-  transition-all ease-in-out duration-[7000ms]
+  transition-all ease-in-out duration-[3000ms]
   "
 
-  [style.scale]="math.random() * 0.3 + 1"
+  [alt]="'Fotografía de Diego Hernández del álbum ' + postMapping.title + '.'"
+
   [style.left]="math.random() * (md ? 80 : 50) + '%'"
   [style.top]="math.random() * 20 +  20 + 'vh'"
 
