@@ -15,9 +15,13 @@ max-w-3xl md:mx-auto
   <div class="flex flex-row gap-3">
       <div *ngFor="let tag of postMapping.tags"
       class="px-4 py-1
-      bg-gray-200
+      bg-gray-200 hover:bg-gray-300 active:bg-gray-400
       rounded-2xl
-      ">
+      cursor-pointer"
+
+      [routerLink]="['/archive']"
+      [queryParams]="{ tag: tag }"
+      >
         #{{tag}}
       </div>
     </div>
@@ -32,7 +36,7 @@ text-justify">
   </markdown>
 </div>
 
-<div *ngIf="!hintIsHidden"
+<div *ngIf="!hintIsHidden && this.postMapping.imageFilenames.length !== 0"
 class="
 bg-blue-100 rounded-2xl
 m-4 p-4
@@ -118,6 +122,7 @@ flex flex-col items-center justify-between
     class="max-h-[75vh]
     shadow-2xl"
     [id]="overlayedImage + '_overlayedImage'"
+    [alt]="'Fotografía de Diego Hernández del álbum ' + postMapping.title + '.'"
     >
   </div>
 

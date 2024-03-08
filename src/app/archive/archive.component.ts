@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { mappings } from "../../content/mappings";
 import { CommonModule } from "@angular/common";
-import {RouterLink} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-archive',
@@ -12,8 +12,13 @@ import {RouterLink} from "@angular/router";
 })
 export class ArchiveComponent implements OnInit {
   archiveMappings: any
-  constructor() {
-
+  constructor(
+    private route: ActivatedRoute
+  ) {
+    const tagInQuery = this.route.snapshot.queryParamMap.get('tag')
+    if (tagInQuery) {
+      this.appliedTags.push(tagInQuery)
+    }
   }
 
   availableTags: string[] = []
