@@ -16,12 +16,42 @@ export class ArchiveComponent implements OnInit {
 
   }
 
+  availableTags: string[] = []
   ngOnInit() {
     this.archiveMappings = mappings.map((map: any) => {
       map.publishDateISO8601 = map.publishDateISO8601 ? new Date(map.publishDateISO8601) : new Date()
       return map
     })
     this.archiveMappings.sort((a: any, b: any) => b.publishDateISO8601 - a.publishDateISO8601)
+
+    this.archiveMappings.map((obj: any) => obj.tags).forEach((mapping: any) => {
+      mapping.forEach((tag: string) => {
+        if (!this.availableTags.includes(tag)) {
+          this.availableTags.push(tag)
+        }
+      })
+    })
   }
 
+  appliedTags: string[] = []
+
+  toggleTagAppliance(tag: string) {
+    if (this.appliedTags.includes(tag)) {
+      this.appliedTags.splice(this.appliedTags.indexOf(tag),1)
+    } else {
+      this.appliedTags.push(tag)
+    }
+  }
+
+  get filteredMappings() {
+    if (this.appliedTags.length === 0) {
+      return this.archiveMappings
+    } else {
+      return this.archiveMappings.filter((mapping: any) => {
+        return this.appliedTags.every((tag: string) => {
+          return mapping.tags.includes(tag)
+        })
+      })
+    }
+  }
 }

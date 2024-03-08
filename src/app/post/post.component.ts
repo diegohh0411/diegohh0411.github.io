@@ -40,7 +40,12 @@ export class PostComponent implements OnInit, OnDestroy {
 
     const availableUuids = mappings.map(map => map.uuid)
     if (this.route.snapshot.url.length === 0) {
-      this.postMapping = mappings.find(mapping => mapping.uuid === 'feb2024')
+      const sortedMappings = mappings.map((map: any) => {
+        map.publishDateISO8601 = map.publishDateISO8601 ? new Date(map.publishDateISO8601) : new Date()
+        return map
+      }).sort((a: any, b: any) => b.publishDateISO8601 - a.publishDateISO8601)
+
+      this.postMapping = sortedMappings[1]
     } else if (!availableUuids.includes(this.postUuid)) {
       this.router.navigate(['404'], { skipLocationChange: true })
     } else {

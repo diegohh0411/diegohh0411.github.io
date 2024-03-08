@@ -1,16 +1,31 @@
 <div
 class="px-4
-flex flex-col gap-6"
+flex flex-col gap-6
+max-w-3xl md:mx-auto"
 >
   <h1 class="text-6xl mt-6">
     Archive
   </h1>
 
-  <div *ngFor="let mapping of archiveMappings"
+  <div class="flex flex-row gap-3 items-center flex-wrap">
+    <div *ngFor="let tag of availableTags"
+         class="px-4
+      cursor-pointer
+      rounded-2xl
+      "
+         [ngClass]="[
+        appliedTags.includes(tag) ? 'bg-gray-200' : 'bg-white'
+      ]"
+         (click)="toggleTagAppliance(tag)"
+    >
+      #{{tag}}
+    </div>
+  </div>
+
+  <div *ngFor="let mapping of filteredMappings"
   class="p-4
   bg-gray-100 hover:bg-gray-200
   transition-all duration-200
-  max-w-xl
   cursor-pointer
   flex flex-row items-center justify-between
   rounded-2xl

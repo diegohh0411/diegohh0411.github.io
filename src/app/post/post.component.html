@@ -2,7 +2,7 @@
 class="bg-gray-100
 m-4 p-4 rounded-2xl
 flex flex-col gap-3
-max-w-xl
+max-w-3xl md:mx-auto
 ">
   <h1 class="text-6xl">
     {{postMapping.title}}
@@ -25,7 +25,8 @@ max-w-xl
 
 
 <div class="mx-4
-max-w-xl text-justify">
+max-w-3xl md:mx-auto
+text-justify">
   <markdown class="markdown">
     {{postMapping.content}}
   </markdown>
@@ -36,7 +37,7 @@ class="
 bg-blue-100 rounded-2xl
 m-4 p-4
 flex items-center gap-4
-max-w-xl
+max-w-3xl md:mx-auto
 ">
   <p>
     Puedes hacer clic en cualquier imagen para abrirla en pantalla completa.
@@ -96,17 +97,29 @@ flex flex-col items-center justify-between
     </svg>
   </div>
 
-
-  <p>{{currentIndex + 1}}/{{this.postMapping.imageFilenames.length}}</p>
-
-  <img
-  [src]="'assets/' + overlayedImage + '_full.jpg'"
-  class="max-h-[75vh]
-  shadow-2xl"
-  [id]="overlayedImage + '_overlayedImage'"
+  <div
+  class="flex flex-col gap-3"
   >
+    <div class="flex flex-row items-center justify-between">
+      <p>Foto no. {{currentIndex + 1}}/{{this.postMapping.imageFilenames.length}}</p>
+
+      <a [href]="'assets/' + overlayedImage + '_full.jpg'" [download]="overlayedImage + '_full.jpg'">
+        <p
+          class="px-4 py-1 bg-blue-100 rounded-2xl cursor-pointer"
+        >
+          Descargar
+        </p>
+      </a>
+    </div>
 
 
+    <img
+    [src]="'assets/' + overlayedImage + '_full.jpg'"
+    class="max-h-[75vh]
+    shadow-2xl"
+    [id]="overlayedImage + '_overlayedImage'"
+    >
+  </div>
 
   <div
   class="flex flex-row items-center justify-between"
