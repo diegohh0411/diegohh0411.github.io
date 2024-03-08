@@ -8,6 +8,9 @@ import { MarkdownComponent } from "ngx-markdown";
 
 import { CookieService } from "ngx-cookie-service";
 
+import anime from 'animejs';
+import {LazyLoadImageModule} from "ng-lazyload-image";
+
 @Component({
   selector: 'app-post',
   standalone: true,
@@ -15,6 +18,7 @@ import { CookieService } from "ngx-cookie-service";
     CommonModule,
     MarkdownComponent,
     RouterLink,
+    LazyLoadImageModule,
   ],
   providers: [
     CookieService
@@ -61,6 +65,35 @@ export class PostComponent implements OnInit, OnDestroy {
     this.hintIsHidden = true
     this.cookieService.set('hintIsHidden', 'true')
   }
+
+  overlayIsOpen = false
+  overlayedImage = ''
+  toggleOverlay(imageToOverlay: string) {
+    this.overlayIsOpen = !this.overlayIsOpen
+    this.overlayedImage = imageToOverlay
+  }
+
+  newIndex(dir: "next"|"prev") {
+    const indexDiff = dir === 'next' ? 1 : -1
+    const newIndex = this.postMapping.imageFilenames.indexOf(this.overlayedImage) + indexDiff
+    return newIndex
+  }
+  changeImage(dir: "next"|"prev") {
+    const newIndex = this.newIndex(dir)
+    if (newIndex > this.postMapping.imageFilenames.length - 1 || newIndex < 0) {
+      return
+    }
+
+    const currentImage = document.getElementById(this.overlayedImage + '_overlayedImage')
+    this.overlayedImage = this.postMapping.imageFilenames[newIndex]
+
+    anime({
+      targets: [currentImage],
+      translateX: dir === 'next' ? ['100vw', '0'] : ['-100vw', '0'],
+      easing: 'spring(1, 80, 15, 15)'
+    })
+  }
+
 
   ngOnDestroy() {
   }
