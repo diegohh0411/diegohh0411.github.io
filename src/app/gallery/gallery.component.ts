@@ -1,4 +1,4 @@
-import {AfterViewChecked, Component} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import { CommonModule } from "@angular/common";
 
 import {ActivatedRoute, Router} from "@angular/router";
@@ -13,7 +13,7 @@ import { LazyLoadImageModule } from "ng-lazyload-image";
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
 })
-export class GalleryComponent implements AfterViewChecked {
+export class GalleryComponent implements AfterViewInit {
   postUuid: string = ''
   postMapping: any = {}
   f: string = ''
@@ -38,15 +38,10 @@ export class GalleryComponent implements AfterViewChecked {
 
   protected readonly math = Math;
 
-  haveAlreadyScrollendIntoView = false
-  ngAfterViewChecked() {
-    if (!this.haveAlreadyScrollendIntoView) {
-      document.getElementById(this.f)?.scrollIntoView({
-        behavior: 'instant',
-        inline: "center"
-      });
-      this.haveAlreadyScrollendIntoView = true
-      console.debug('Have scrolled into the view of the f image.')
-    }
+  ngAfterViewInit() {
+    document.getElementById(this.f)?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center'
+    });
   }
 }
