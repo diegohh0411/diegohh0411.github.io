@@ -73,6 +73,9 @@ export class PostComponent implements OnInit, OnDestroy {
     this.overlayedImage = imageToOverlay
   }
 
+  get currentIndex() {
+    return this.postMapping.imageFilenames.indexOf(this.overlayedImage)
+  }
   newIndex(dir: "next"|"prev") {
     const indexDiff = dir === 'next' ? 1 : -1
     const newIndex = this.postMapping.imageFilenames.indexOf(this.overlayedImage) + indexDiff

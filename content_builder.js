@@ -28,6 +28,10 @@ folders.forEach(folder => {
         }
       })
 
+      const content = fs.readFileSync(`./src/content/${folder}/index.md`, { encoding: 'utf-8' }) ?? ''
+      index['content'] = content
+
+      console.log(index)
       mappings.push(index)
     }
   } catch (e) {
