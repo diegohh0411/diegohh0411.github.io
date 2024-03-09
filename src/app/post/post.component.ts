@@ -74,17 +74,20 @@ export class PostComponent implements OnInit, OnDestroy {
   overlayIsOpen = false
   overlayedImage = ''
   toggleOverlay(imageToOverlay: string) {
+    /**
     if (!this.overlayIsOpen) {
       this.currentScrollState = {
         x: window.scrollX,
         y: window.scrollY
       }
     }
+    */
 
     this.overlayIsOpen = !this.overlayIsOpen
     this.overlayedImage = imageToOverlay
   }
 
+  /**
   currentScrollState = { x: 0, y: 0}
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event) {
@@ -93,7 +96,7 @@ export class PostComponent implements OnInit, OnDestroy {
       window.scrollTo(this.currentScrollState.x, this.currentScrollState.y)
     }
   }
-
+  */
 
   get currentIndex() {
     return this.postMapping.imageFilenames.indexOf(this.overlayedImage)

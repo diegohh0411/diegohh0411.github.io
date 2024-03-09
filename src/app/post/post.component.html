@@ -40,7 +40,7 @@ text-justify">
 class="
 bg-blue-100 rounded-2xl
 m-4 p-4
-flex items-center gap-4
+flex items-center justify-between gap-4
 max-w-3xl md:mx-auto
 ">
   <p>
@@ -51,7 +51,7 @@ max-w-3xl md:mx-auto
   (click)="hideHint()"
   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
    class="w-12 h-12
-   md:w-8 md:h-8
+   md:w-6 md:h-6
    cursor-pointer">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
   </svg>
@@ -67,7 +67,7 @@ id="imageContainer"
 >
   <img *ngFor="let image of postMapping.imageFilenames"
   [src]="'assets/' + image + (md ? '_full.jpg' : '_800.jpg')"
-  class="w-1/2 md:w-1/6
+  class="w-2/3 md:w-1/6
   object-contain max-h-[80vh]
   cursor-pointer
   sticky
@@ -77,7 +77,7 @@ id="imageContainer"
 
   [alt]="'Fotografía de Diego Hernández del álbum ' + postMapping.title + '.'"
 
-  [style.left]="math.random() * (md ? 80 : 50) + '%'"
+  [style.left]="math.random() * (md ? 80 : 34) + '%'"
   [style.top]="math.random() * 20 +  20 + 'vh'"
 
   (click)="toggleOverlay(image)"
