@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import { Router } from "@angular/router";
 import { mappings } from "../../content/mappings";
@@ -74,9 +74,26 @@ export class PostComponent implements OnInit, OnDestroy {
   overlayIsOpen = false
   overlayedImage = ''
   toggleOverlay(imageToOverlay: string) {
+    if (!this.overlayIsOpen) {
+      this.currentScrollState = {
+        x: window.scrollX,
+        y: window.scrollY
+      }
+    }
+
     this.overlayIsOpen = !this.overlayIsOpen
     this.overlayedImage = imageToOverlay
   }
+
+  currentScrollState = { x: 0, y: 0}
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event: Event) {
+    if (this.overlayIsOpen) {
+      event.preventDefault()
+      window.scrollTo(this.currentScrollState.x, this.currentScrollState.y)
+    }
+  }
+
 
   get currentIndex() {
     return this.postMapping.imageFilenames.indexOf(this.overlayedImage)
@@ -95,7 +112,6 @@ export class PostComponent implements OnInit, OnDestroy {
     const currentImage = document.getElementById(this.overlayedImage + '_overlayedImage')
     this.overlayedImage = this.postMapping.imageFilenames[newIndex]
   }
-
 
   ngOnDestroy() {
   }

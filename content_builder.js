@@ -8,6 +8,7 @@ const mappings = []
 
 const folders = fs.readdirSync('./src/content');
 
+// mappings.ts file creation
 folders.forEach(folder => {
   try {
     const files = fs.readdirSync(`./src/content/${folder}`)
@@ -25,6 +26,14 @@ folders.forEach(folder => {
       files.forEach(file => {
         if (imageEndings.some(ending => file.endsWith(ending))) {
           index['imageFilenames'].push(file)
+        }
+      })
+
+      index['videoFilenames'] = []
+      const videoEndings = ['.mp4', '.MP4']
+      files.forEach(file => {
+        if (videoEndings.some(ending => file.endsWith(ending))) {
+          index['videoFilenames'].push(file)
         }
       })
 
@@ -46,9 +55,9 @@ mappings.forEach(map => {
 })
 fs.writeFileSync('./routes.txt', contentsToWriteToFile)
 
+// Image & video optimization
 mappings.forEach(mapping => {
   mapping.imageFilenames.forEach(filename => {
-
     fs.access('./src/assets/' + filename + '_800.jpg', fs.constants.F_OK, (err) => {
       if (err) {
         // File does not exist, so create it.
@@ -72,7 +81,8 @@ mappings.forEach(mapping => {
             })
       }
     })
-   })
+  })
+
 })
 
 fs.writeFileSync(
