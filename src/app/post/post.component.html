@@ -118,12 +118,15 @@ flex flex-col items-center justify-between
 
 
     <img
-    [src]="'assets/' + overlayedImage + '_full.jpg'"
+    [defaultImage]="'assets/' + overlayedImage + '_800.jpg'"
+    [lazyLoad]="'assets/' + overlayedImage + '_full.jpg'"
+
     class="max-h-[75vh]
     shadow-2xl"
+
     [id]="overlayedImage + '_overlayedImage'"
     [alt]="'Fotografía de Diego Hernández del álbum ' + postMapping.title + '.'"
-    >
+   />
   </div>
 
   <div

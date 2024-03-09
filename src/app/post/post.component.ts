@@ -3,7 +3,7 @@ import {ActivatedRoute, RouterLink} from "@angular/router";
 import { Router } from "@angular/router";
 import { mappings } from "../../content/mappings";
 
-import { CommonModule } from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 import { MarkdownComponent } from "ngx-markdown";
 
 import { CookieService } from "ngx-cookie-service";
@@ -19,6 +19,7 @@ import {LazyLoadImageModule} from "ng-lazyload-image";
     MarkdownComponent,
     RouterLink,
     LazyLoadImageModule,
+    NgOptimizedImage,
   ],
   providers: [
     CookieService
