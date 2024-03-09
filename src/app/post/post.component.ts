@@ -8,7 +8,6 @@ import { MarkdownComponent } from "ngx-markdown";
 
 import { CookieService } from "ngx-cookie-service";
 
-import anime from 'animejs';
 import {LazyLoadImageModule} from "ng-lazyload-image";
 
 @Component({
@@ -95,12 +94,6 @@ export class PostComponent implements OnInit, OnDestroy {
 
     const currentImage = document.getElementById(this.overlayedImage + '_overlayedImage')
     this.overlayedImage = this.postMapping.imageFilenames[newIndex]
-
-    anime({
-      targets: [currentImage],
-      translateX: dir === 'next' ? ['100vw', '0'] : ['-100vw', '0'],
-      easing: 'spring(1, 80, 15, 15)'
-    })
   }
 
 
