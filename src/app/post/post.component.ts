@@ -1,4 +1,4 @@
-import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import { Router } from "@angular/router";
 import { mappings } from "../../content/mappings";
@@ -46,6 +46,7 @@ export class PostComponent implements OnInit, OnDestroy {
       }).sort((a: any, b: any) => b.publishDateISO8601 - a.publishDateISO8601)
 
       this.postMapping = sortedMappings[1]
+      this.postUuid = this.postMapping.uuid
     } else if (!availableUuids.includes(this.postUuid)) {
       this.router.navigate(['404'], { skipLocationChange: true })
     } else {
@@ -69,51 +70,6 @@ export class PostComponent implements OnInit, OnDestroy {
   hideHint() {
     this.hintIsHidden = true
     this.cookieService.set('hintIsHidden', 'true')
-  }
-
-  overlayIsOpen = false
-  overlayedImage = ''
-  toggleOverlay(imageToOverlay: string) {
-    /**
-    if (!this.overlayIsOpen) {
-      this.currentScrollState = {
-        x: window.scrollX,
-        y: window.scrollY
-      }
-    }
-    */
-
-    this.overlayIsOpen = !this.overlayIsOpen
-    this.overlayedImage = imageToOverlay
-  }
-
-  /**
-  currentScrollState = { x: 0, y: 0}
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(event: Event) {
-    if (this.overlayIsOpen) {
-      event.preventDefault()
-      window.scrollTo(this.currentScrollState.x, this.currentScrollState.y)
-    }
-  }
-  */
-
-  get currentIndex() {
-    return this.postMapping.imageFilenames.indexOf(this.overlayedImage)
-  }
-  newIndex(dir: "next"|"prev") {
-    const indexDiff = dir === 'next' ? 1 : -1
-    const newIndex = this.postMapping.imageFilenames.indexOf(this.overlayedImage) + indexDiff
-    return newIndex
-  }
-  changeImage(dir: "next"|"prev") {
-    const newIndex = this.newIndex(dir)
-    if (newIndex > this.postMapping.imageFilenames.length - 1 || newIndex < 0) {
-      return
-    }
-
-    const currentImage = document.getElementById(this.overlayedImage + '_overlayedImage')
-    this.overlayedImage = this.postMapping.imageFilenames[newIndex]
   }
 
   ngOnDestroy() {
