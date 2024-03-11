@@ -11,7 +11,7 @@ max-w-3xl md:mx-auto"
     <div *ngFor="let tag of availableTags"
          class="px-4
       cursor-pointer
-      rounded-2xl
+      rounded-xl
       text-xs
       "
          [ngClass]="[
@@ -29,7 +29,7 @@ max-w-3xl md:mx-auto"
   transition-all duration-200
   cursor-pointer
   flex flex-row items-center justify-between
-  rounded-2xl
+  rounded-xl
   "
   [routerLink]="'/p/' + mapping.uuid"
   >
@@ -49,7 +49,7 @@ max-w-3xl md:mx-auto"
   </div>
 
   <div *ngIf="filteredMappings.length === 0"
-  class="bg-orange-100 rounded-2xl p-4">
+  class="bg-orange-100 rounded-xl p-4">
     No encontramos ninguna publicación que coincidiera con esos filtros :(
   </div>
 </div>

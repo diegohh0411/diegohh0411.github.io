@@ -1,6 +1,6 @@
 <div
 class="bg-gray-100
-m-4 p-4 rounded-2xl
+m-4 p-4 rounded-xl
 flex flex-col gap-3
 max-w-3xl md:mx-auto
 ">
@@ -16,7 +16,7 @@ max-w-3xl md:mx-auto
       <div *ngFor="let tag of postMapping.tags"
       class="px-4 py-1
       bg-gray-200 hover:bg-gray-300 active:bg-gray-400
-      rounded-2xl
+      rounded-xl
       cursor-pointer"
 
       [routerLink]="['/archive']"
@@ -37,7 +37,7 @@ text-justify">
 
 <div *ngIf="!hintIsHidden && this.postMapping.imageFilenames.length !== 0"
 class="
-bg-blue-100 rounded-2xl
+bg-blue-100 rounded-xl
 m-4 p-4
 flex items-center justify-between gap-4
 max-w-3xl md:mx-auto
@@ -85,14 +85,14 @@ id="imageContainer"
 
 <div class="mx-4 my-32
 flex flex-col items-center justify-center gap-3
-rounded-2xl">
+rounded-xl">
   <p>
-    Tengo un par de historias más...
+    Mis demás historias y fotos están por acá...
   </p>
 
   <div
   class="bg-blue-100 hover:bg-blue-200 active:bg-blue-300
-  p-4 rounded-2xl
+  p-4 rounded-xl
   flex flex-row items-center justify-center gap-1
   w-full max-w-2xl
   cursor-pointer
