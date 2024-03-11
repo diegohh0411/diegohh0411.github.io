@@ -10,15 +10,17 @@ Esta *Bitácora de Santiago* es una transcripción de los audios que grabé dura
 
 # Domingo 23 de Julio del 2023
 
-### 07:44 AM en Portomarín, España
-
 ##### Audio 1
+
+### 07:44 AM en Portomarín, España
 
 ¿Qué onda, familia? Este... oigan, pues ayer se me fue la onda completamente mandarles audio. Y la verdad es que cada vez... bueno no... bueno, sí; cada vez está un poquito más difícil encontrar dónde mandarles un audio porque usualmente se los mando cuando ya es nochecita y la gente está durmiendo y los hostales se están volviendo más comunales. O sea, cuando nos quedamos en Schoenstatt teníamos varios cuartos y la gente, por cuartos, no era tanta. Pero, por ejemplo, anoche nos dormimos en un hostal que era un solo cuarto y tenía 130 camas el cuarto entero. Era como un cuarto grande, como una sala. Entonces, literalmente todo mundo dormimos en el mismo cuarto. Y los hostales cierran las puertas a las 10:30. O sea, después de las 10:30, si te quedaste fuera ya no puedes entrar. Pues, porque todo mundo en El Camino de Santiago se tiene que dormir temprano y levantarse muy temprano, no? Acá son las 7:45 de la mañana, estamos cerca de comenzar a caminar el tramo que nos toca caminar hoy, que son como 25 kilómetros y la verdad es que ayer estuvo fenomenal.
 
 ---
 
 ##### Audio 2
+
+### 7:46 AM en Portomarín, España
 
 Ayer comenzamos El Camino. Nos levantamos... bueno, no me acuerdo a qué horas nos levantamos pero a las 7:30 AM desayunamos y a las 8:15 AM empezamos a caminar desde Sarria. Y el Padre Rorro nos propuso que la primera hora de caminata fuera en silencio. Entonces la primera hora nos fuimos en silencio. Y luego después de eso ya cada quien iba a su ritmo y como quisiera, no? Si querías continuar en silencio, podías. Si querías escuchar música o platicar, pues ya éramos completamente libres. Y la verdad es que lo disfruté demasiado. O sea, realmente disfruto mucho caminar y El Camino de Santiago es un camino demasiado precioso. Realmente está muy, muy bonito todo. Nos encontramos a vacas que iban así pasando por el camino, casual. El camino está súper bien mantenido. O sea, yo creo que gran parte del tramo es asfalto. Um, no sé cómo describirlo, pero tengo fotos y videos. Grabé mucho. Realmente sí es una experiencia muy, muy, muy bonita. Es estar en medio de la naturaleza varias horas caminando y todo lo que ves es bello. 
 
@@ -36,6 +38,6 @@ Y ya, la verdad es que no tuvimos tiempo de cenar en un restaurante bien porque 
 
 ##### Audio 3
 
-Estoy viendo que los videos y fotos de ayer todavía no se han respaldado en línea entonces creo que no se los voy a poder pasar ahorita. Ya estamos a punto de irnos y no va a dar el tiempo para que se terminen de subir. Pero, en cuanto tenga oportunidad se las comparto.
+### 7:52 en Portomarín, España
 
-# 
+Estoy viendo que los videos y fotos de ayer todavía no se han respaldado en línea entonces creo que no se los voy a poder pasar ahorita. Ya estamos a punto de irnos y no va a dar el tiempo para que se terminen de subir. Pero, en cuanto tenga oportunidad se las comparto.
