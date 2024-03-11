@@ -6,11 +6,14 @@ const sharp = require("sharp");
 
 const mappings = []
 
-const folders = fs.readdirSync('./src/content');
+const folders = fs.readdirSync('./src/content', { withFileTypes: true })
+  .filter(dirent => dirent.isDirectory())
+  .map(dirent => dirent.name);
+console.log(folders)
 
-function isUUID(str) {
+function isUUIDWithIndex(str) {
   // Regular expression to validate UUID format
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+  const uuidRegex = /^[0-9]{4}-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
   return uuidRegex.test(str);
 }
 // mappings.ts file creation
@@ -19,7 +22,6 @@ folders.forEach(folder => {
     const files = fs.readdirSync(`./src/content/${folder}`)
     if (files.includes('index.json')) {
       const index = JSON.parse(fs.readFileSync(`./src/content/${folder}/index.json`, { encoding: 'utf-8'}))
-
       index['parentFolder'] = folder;
 
       if (!index.uuid) {
@@ -28,10 +30,10 @@ folders.forEach(folder => {
 
       index['imageFilenames'] = []
       const imageEndings = ['.jpg', '.JPG', '.png', '.PNG', '.tiff', '.TIFF']
-      files.forEach(file => {
+      files.forEach((file, i) => {
         if (imageEndings.some(ending => file.endsWith(ending))) {
-          if (!isUUID(file.substring(0, file.length - 4))) {
-            const newFileName = `${crypto.randomUUID()}.${file.slice(-3)}`
+          if (!isUUIDWithIndex(file.substring(0, file.length - 4))) {
+            const newFileName = `${i.toString().padStart(4, '0')}-${crypto.randomUUID()}.${file.slice(-3)}`
             fs.rename(`./src/content/${folder}/${file}`, `./src/content/${folder}/${newFileName}`, (err) => {
               if (err) throw err;
               console.log(`File [${file}] renamed to [${newFileName}]`)
@@ -39,6 +41,7 @@ folders.forEach(folder => {
 
             index['imageFilenames'].push(newFileName)
           } else {
+            console.log(index)
             index['imageFilenames'].push(file)
           }
         }
@@ -57,7 +60,7 @@ folders.forEach(folder => {
       mappings.push(index)
     }
   } catch (e) {
-
+    console.error(e)
   }
 })
 

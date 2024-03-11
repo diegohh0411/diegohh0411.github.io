@@ -42,4 +42,12 @@ export class GalleryComponent {
 
     this.filename = this.postMapping.imageFilenames[newIndex]
   }
+
+  get height(): string {
+    const navbar = document.getElementById('navbar')
+    if (!navbar) { return '100%'; }
+
+    const { height, marginTop, marginBottom } = window.getComputedStyle(navbar)
+    return `calc(100svh - ${height} - ${marginTop} - ${marginBottom})`
+  }
 }
