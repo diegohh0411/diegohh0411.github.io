@@ -1,23 +1,24 @@
 <div
-class="px-4 mb-32
+class="px-4 pb-32
 flex flex-col gap-6
-max-w-3xl md:mx-auto"
+max-w-3xl md:mx-auto
+"
 >
-  <h1 class="text-6xl mt-6">
+  <h1 class="text-6xl">
     Archive
   </h1>
 
   <div class="flex flex-row gap-3 items-center flex-wrap">
     <div *ngFor="let tag of availableTags"
-         class="px-4
-      cursor-pointer
-      rounded-xl
-      text-xs
-      "
-         [ngClass]="[
-        appliedTags.includes(tag) ? 'bg-gray-200' : 'bg-white'
-      ]"
-         (click)="toggleTagAppliance(tag)"
+    class="px-4
+    cursor-pointer
+    rounded-xl
+    text-xs
+    "
+    [ngClass]="[
+      appliedTags.includes(tag) ? 'bg-gray-200 dark:bg-gray-600' : ''
+    ]"
+    (click)="toggleTagAppliance(tag)"
     >
       #{{tag}}
     </div>
@@ -25,8 +26,8 @@ max-w-3xl md:mx-auto"
 
   <div *ngFor="let mapping of filteredMappings"
   class="p-4
-  bg-gray-100 hover:bg-gray-200
-  transition-all duration-200
+  bg-gray-100 hover:bg-gray-200 active:bg-gray-300
+  dark:bg-gray-700 dark:hover:bg-gray-600 dark:active:bg-gray-500
   cursor-pointer
   flex flex-row items-center justify-between
   rounded-xl
@@ -49,7 +50,7 @@ max-w-3xl md:mx-auto"
   </div>
 
   <div *ngIf="filteredMappings.length === 0"
-  class="bg-orange-100 rounded-xl p-4">
+  class="bg-orange-100 dark:bg-orange-800 rounded-xl p-4">
     No encontramos ninguna publicación que coincidiera con esos filtros :(
   </div>
 </div>

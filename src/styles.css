@@ -14,7 +14,11 @@ h3 {
 }
 
 h5 {
-  @apply text-sm font-bold bg-gray-200 w-fit px-3 rounded-full
+  @apply text-sm font-bold bg-gray-200 dark:bg-gray-600 w-fit px-3 rounded-full
+}
+
+hr {
+  @apply dark:border-gray-600
 }
 
 .markdown {

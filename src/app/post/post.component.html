@@ -1,110 +1,121 @@
 <div
-class="bg-gray-100
-m-4 p-4 rounded-xl
+class="p-4
 flex flex-col gap-3
-max-w-3xl md:mx-auto
-">
-  <h1 class="text-6xl">
-    {{postMapping.title}}
-  </h1>
+"
+>
+  <div
+  class="
+  bg-gray-100 dark:bg-gray-700
+  p-4 rounded-xl
+  flex flex-col gap-3
+  max-w-3xl md:mx-auto
+  ">
+    <h1 class="text-6xl">
+      {{postMapping.title}}
+    </h1>
 
-  <p>
-    Publicado el {{(postMapping.publishDateISO8601).toLocaleDateString('es-MX')}}
-  </p>
+    <p>
+      Publicado el {{(postMapping.publishDateISO8601).toLocaleDateString('es-MX')}}
+    </p>
 
-  <div class="flex flex-row gap-3">
+    <div class="flex flex-row gap-3">
       <div *ngFor="let tag of postMapping.tags"
       class="px-4 py-1
       bg-gray-200 hover:bg-gray-300 active:bg-gray-400
+      dark:bg-gray-600 dark:hover:bg-gray-500 dark:active:bg-gray-400
       rounded-xl
-      cursor-pointer"
-
+      cursor-pointer
+      "
       [routerLink]="['/archive']"
       [queryParams]="{ tag: tag }"
       >
         #{{tag}}
       </div>
+    </div>
   </div>
-</div>
 
-<div class="mx-4
-max-w-3xl md:mx-auto
-text-justify">
-  <markdown class="markdown">
-    {{postMapping.content}}
-  </markdown>
-</div>
+  <div class="
+  max-w-3xl md:mx-auto
+  text-justify">
+    <markdown class="markdown">
+      {{postMapping.content}}
+    </markdown>
+  </div>
 
-<div *ngIf="!hintIsHidden && this.postMapping.imageFilenames.length !== 0"
-class="
-bg-blue-100 rounded-xl
-m-4 p-4
-flex items-center justify-between gap-4
-max-w-3xl md:mx-auto
-">
-  <p>
-    Puedes hacer clic en cualquier imagen para abrirla en pantalla completa.
-  </p>
-
-  <svg
-  (click)="hideHint()"
-  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-   class="w-12 h-12
-   md:w-6 md:h-6
-   cursor-pointer">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-  </svg>
-</div>
-
-<div class="flex flex-col
-gap-[50vh]
-pt-6 pb-24
-px-4
-relative
-"
-id="imageContainer"
->
-  <img *ngFor="let image of postMapping.imageFilenames"
-  [src]="'assets/' + image + (md ? '_1000.jpg' : '_400.jpg')"
-  class="w-2/3 md:w-1/6
-  object-contain max-h-[80vh]
-  cursor-pointer
-  sticky
-  transition-all ease-in-out duration-[5000ms]
-  drop-shadow-2xl
-  "
-
-  [alt]="'Fotografía de Diego Hernández del álbum ' + postMapping.title + '.'"
-
-  [style.left]="math.random() * (md ? 80 : 34) + '%'"
-  [style.top]="math.random() * 20 +  20 + 'vh'"
-
-  [routerLink]="'/g/' + postUuid + '/' + image.replace('.', '%2E')"
-  />
-</div>
-
-<div class="mx-4 my-32
-flex flex-col items-center justify-center gap-3
-rounded-xl">
-  <p>
-    Mis demás historias y fotos están por acá...
-  </p>
-
-  <div
-  class="bg-blue-100 hover:bg-blue-200 active:bg-blue-300
-  p-4 rounded-xl
-  flex flex-row items-center justify-center gap-1
-  w-full max-w-2xl
-  cursor-pointer
-  "
-  [routerLink]="'/archive'"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-      <path d="M2 3.5A1.5 1.5 0 0 1 3.5 2h2.879a1.5 1.5 0 0 1 1.06.44l1.122 1.12A1.5 1.5 0 0 0 9.62 4H12.5A1.5 1.5 0 0 1 14 5.5v1.401a2.986 2.986 0 0 0-1.5-.401h-9c-.546 0-1.059.146-1.5.401V3.5ZM2 9.5v3A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-3A1.5 1.5 0 0 0 12.5 8h-9A1.5 1.5 0 0 0 2 9.5Z" />
-    </svg>
-
+  <div *ngIf="!hintIsHidden && this.postMapping.imageFilenames.length !== 0"
+  class="
+  bg-blue-100 dark:bg-blue-900
+  rounded-xl
+  p-4
+  flex items-center justify-between gap-4
+  max-w-3xl md:mx-auto
+  ">
     <p>
-      Ver el archivo
+      Puedes hacer clic en cualquier imagen para abrirla en pantalla completa.
     </p>
+
+    <svg
+    (click)="hideHint()"
+    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+    class="w-12 h-12
+    md:w-6 md:h-6
+    cursor-pointer">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+    </svg>
+  </div>
+
+  <div class="flex flex-col
+  gap-[50vh]
+  pt-6 pb-24
+  relative
+  "
+       id="imageContainer"
+  >
+    <img *ngFor="let image of postMapping.imageFilenames"
+    [src]="'assets/' + image + (md ? '_1000.jpg' : '_400.jpg')"
+    class="w-2/3 md:w-1/6
+    object-contain max-h-[80vh]
+    cursor-pointer
+    sticky
+    transition-all ease-in-out duration-[5000ms]
+    drop-shadow-2xl
+    "
+
+    [alt]="'Fotografía de Diego Hernández del álbum ' + postMapping.title + '.'"
+
+    [style.left]="math.random() * (md ? 80 : 34) + '%'"
+    [style.top]="math.random() * 20 +  20 + 'vh'"
+
+    [routerLink]="'/g/' + postUuid + '/' + image.replace('.', '%2E')"
+    />
+  </div>
+
+  <div class="my-32
+  flex flex-col items-center justify-center gap-3
+  rounded-xl
+  ">
+    <p>
+      Mis demás historias y fotos están por acá...
+    </p>
+
+    <div
+    class="
+    bg-blue-100 hover:bg-blue-200 active:bg-blue-300
+    dark:bg-blue-900 dark:hover:bg-blue-800 dark:active:bg-blue-700
+    p-4 rounded-xl
+    flex flex-row items-center justify-center gap-1
+    w-full max-w-2xl
+    cursor-pointer
+    "
+      [routerLink]="'/archive'"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+        <path d="M2 3.5A1.5 1.5 0 0 1 3.5 2h2.879a1.5 1.5 0 0 1 1.06.44l1.122 1.12A1.5 1.5 0 0 0 9.62 4H12.5A1.5 1.5 0 0 1 14 5.5v1.401a2.986 2.986 0 0 0-1.5-.401h-9c-.546 0-1.059.146-1.5.401V3.5ZM2 9.5v3A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-3A1.5 1.5 0 0 0 12.5 8h-9A1.5 1.5 0 0 0 2 9.5Z" />
+      </svg>
+
+      <p>
+        Ver el archivo
+      </p>
+    </div>
   </div>
 </div>
