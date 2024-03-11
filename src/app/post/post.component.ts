@@ -62,21 +62,9 @@ export class PostComponent implements OnInit, OnDestroy {
 
   protected readonly math = Math;
 
-  timeOuts: any[]= []
-  sleep(ms: number) {
-    return new Promise(resolve => {
-      this.timeOuts.push(setTimeout(resolve, ms));
-    });
-  }
-
   hintIsHidden = false
   async ngOnInit() {
     this.hintIsHidden = this.cookieService.get('hintIsHidden') === 'true'
-
-    for (let i = 0; i < 15; i++) {
-      console.debug('.')
-      await this.sleep(8000)
-    }
   }
 
   hideHint() {
@@ -85,9 +73,5 @@ export class PostComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.timeOuts.forEach(to => {
-      clearTimeout(to);
-    })
-    console.log('Destroyed the PostComponent')
   }
 }

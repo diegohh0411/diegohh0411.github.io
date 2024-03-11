@@ -77,13 +77,13 @@ fs.writeFileSync('./routes.txt', contentsToWriteToFile)
 // Image & video optimization
 mappings.forEach(mapping => {
   mapping.imageFilenames.forEach(filename => {
-    fs.access('./src/assets/' + filename + '_800.jpg', fs.constants.F_OK, (err) => {
+    fs.access('./src/assets/' + filename + '_400.jpg', fs.constants.F_OK, (err) => {
       if (err) {
         // File does not exist, so create it.
         sharp('./src/content/' + mapping.parentFolder + '/' + filename)
-          .resize(800)
+          .resize(400)
           .jpeg({mozjpeg: true})
-          .toFile('./src/assets/' + filename + '_800.jpg',
+          .toFile('./src/assets/' + filename + '_400.jpg',
             (err, _info) => {
               err ? console.error(err) : null
               console.log(`Optimized file [${filename}]`)
