@@ -91,11 +91,12 @@ mappings.forEach(mapping => {
       }
     })
 
-    fs.access('./src/assets/' + filename + '_full.jpg', fs.constants.F_OK, (err) => {
+    fs.access('./src/assets/' + filename + '_1000.jpg', fs.constants.F_OK, (err) => {
       if (err) {
         sharp('./src/content/' + mapping.parentFolder + '/' + filename)
+          .resize(1000)
           .jpeg({mozjpeg: true})
-          .toFile('./src/assets/' + filename + '_full.jpg',
+          .toFile('./src/assets/' + filename + '_1000.jpg',
             (err, _info) => {
               err ? console.error(err) : null
             })

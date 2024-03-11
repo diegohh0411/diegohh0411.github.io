@@ -11,7 +11,7 @@ flex flex-col items-center justify-end gap-6
       Foto no. {{currentIndex + 1}}/{{postMapping.imageFilenames.length}}
     </p>
 
-    <a [href]="'assets/' + filename + '_full.jpg'" [download]="filename">
+    <a [href]="'assets/' + filename + '_1000.jpg'" [download]="filename">
       <div class="
       bg-blue-200 hover:bg-blue-300 active:bg-blue-400
       p-2 rounded-2xl
@@ -29,7 +29,7 @@ flex flex-col items-center justify-end gap-6
 
   <img
     [defaultImage]="'assets/' + filename + '_400.jpg'"
-    [lazyLoad]="'assets/' + filename + '_full.jpg'"
+    [lazyLoad]="'assets/' + filename + '_1000.jpg'"
 
     [alt]="'Fotografía por Diego Hernández del álbum ' + postMapping.title"
 

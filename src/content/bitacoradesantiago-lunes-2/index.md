@@ -2,7 +2,7 @@
 
 ##### Audio 1
 
-### 10:43 en Ribadiso, España
+### 10:43 PM en Ribadiso, España
 
 Ey, ¿qué onda familia? Oigan, bueno, ahora sí voy a contarles. La verdad es que sé que ya no me acuerdo de tantos detalles sobre ayer pero haré mi mejor esfuerzo por contarles todo a mayor detalle.
 
@@ -18,7 +18,7 @@ De hecho, está... creo que está... está curioso porque hablan en gallego y co
 
 ##### Audio 2
 
-### 10:46 en Ribadiso, España
+### 10:46 PM en Ribadiso, España
 
 Disculpen que sonó la notificación. Ya las desactivé. Pero, les decía que ayer lo más memorable como del panorama eran los valles porque, como que ayer... Ayer, la verdad, yo creo que ha sido el día más pesado. Ayer nos tocó mucho subir cuestas empinadas porque, como que subimos varios montes. Entonces estuvo pesadito. Pero lo chido de subir montes fue que vimos muchos valles, este... Y nos tocó ver muchos valles llenos de como de... así de plantíos. O sea, extensiones grandes de campo plantadas. Entonces estuvo muy bonito como rezar el rosario y ver pasar tanta belleza y tantos campos y tantos colores, no? La verdad es que sí ha sido una experiencia de mucha belleza. De ver, de contemplar mucha creación y muy, muy, muy, muy, muy bella. 
 
