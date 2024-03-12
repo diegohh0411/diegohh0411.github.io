@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {mappings} from "../../content/mappings";
 import {LazyLoadImageModule} from "ng-lazyload-image";
 import { CommonModule} from "@angular/common";
@@ -9,7 +9,8 @@ import { CommonModule} from "@angular/common";
   standalone: true,
   imports: [
     LazyLoadImageModule,
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
