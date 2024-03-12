@@ -34,6 +34,10 @@ export class GalleryComponent {
   }
 
   move(dir: "prev"|"next") {
+    if (this.loading || this.goingToSetToTrue) {
+      return
+    }
+
     const newIndex = dir === "prev" ? this.currentIndex - 1 : this.currentIndex + 1
 
     if (newIndex < 0 || newIndex >= this.postMapping.imageFilenames.length) {
@@ -41,6 +45,14 @@ export class GalleryComponent {
     }
 
     this.filename = this.postMapping.imageFilenames[newIndex]
+
+    this.goingToSetToTrue = true
+    setTimeout(() => {
+      if (this.goingToSetToTrue) {
+        this.loading = true
+        this.goingToSetToTrue = false
+      }
+    }, 500)
   }
 
   get height(): string {
@@ -50,4 +62,7 @@ export class GalleryComponent {
     const { height, marginTop, marginBottom } = window.getComputedStyle(navbar)
     return `calc(100svh - ${height} - ${marginTop} - ${marginBottom})`
   }
+
+  loading = true
+  goingToSetToTrue = false
 }
