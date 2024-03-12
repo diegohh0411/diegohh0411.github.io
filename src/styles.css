@@ -22,9 +22,9 @@ hr {
 }
 
 .markdown {
-  @apply flex flex-col gap-3 leading-loose
+  @apply flex flex-col gap-3
 }
 
 .markdown p {
-  @apply mb-3
+  @apply mb-3 text-lg leading-loose
 }
