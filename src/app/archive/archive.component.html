@@ -25,28 +25,29 @@ max-w-3xl md:mx-auto
   </div>
 
   <div *ngFor="let mapping of filteredMappings"
-  class="p-4
+  class="p-2
   bg-gray-100 hover:bg-gray-200 active:bg-gray-300
   dark:bg-gray-700 dark:hover:bg-gray-600 dark:active:bg-gray-500
   cursor-pointer
-  flex flex-row items-center justify-between
   rounded-xl
+
+  grid grid-cols-3 md:grid-cols-5 gap-3 items-center
   "
   [routerLink]="'/p/' + mapping.uuid"
   >
-    <div class="flex flex-row gap-3">
-      <p class="opacity-40 row-end-1" *ngIf="mapping.uuid !== 'about'">
-        {{(mapping.publishDateISO8601).toLocaleDateString('es-MX')}}
-      </p>
+    <p class="
+    p-2 rounded-xl
+    flex items-center justify-center
+    bg-gray-200
+    dark:bg-gray-600
+    "
+    *ngIf="mapping.uuid !== 'about'">
+      {{(mapping.publishDateISO8601).toLocaleDateString('es-MX')}}
+    </p>
 
-      <p class="">
-        {{mapping.title}}
-      </p>
-    </div>
-
-    <div class="text-xs hidden md:block">
-      {{mapping.tags.join(', ')}}
-    </div>
+    <p class="col-start-2 col-end-4 md:col-end-5">
+      {{mapping.title}}
+    </p>
   </div>
 
   <div *ngIf="filteredMappings.length === 0"

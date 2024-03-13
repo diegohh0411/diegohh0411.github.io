@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['Space Grotesk', 'sans-serif'],
+      'sans': ['Poppins', 'sans-serif'],
       'mono': ['VT323', 'monospace']
     },
     extend: {},

@@ -29,7 +29,7 @@ folders.forEach(folder => {
       }
 
       index['imageFilenames'] = []
-      const imageEndings = ['.jpg', '.JPG', '.png', '.PNG', '.tiff', '.TIFF']
+      const imageEndings = ['.jpg', '.JPG', '.png', '.PNG', '.tiff', '.TIFF', '.tif', '.TIF']
       files.forEach((file, i) => {
         if (imageEndings.some(ending => file.endsWith(ending))) {
           if (!isUUIDWithIndex(file.substring(0, file.length - 4))) {

@@ -1,0 +1,3 @@
+Las fotos del primer rollo de la Olympus Pen EE-3 salieron impecables e impolutas. Por eso estaba demasiado emocionado por ver el segundo rollo de mi Olympus. Solo que, esta vez, fui a revelar con otro laboratorio. En vez de regresar con Bengala, probé Pantera Labs. Además de que se tardaron en entregarme los scans —porque se tardaron—, la resolución está bastante corriente. 
+
+Pero, dejando de lado mi _rant_ sobre Pantera, este ha sido de los rollos que más he disfrutado tomar.  Tomé fotos de AmarT en la Prepa Udem, de Jesús Eucaristía, de la parroquia de San Juan Bosco —que se ha vuelto mi hogar—, de el santuario de Schoenstatt y del retiro de Focus. Quiero mucho a las personas y a los lugares que aparecen en este rollo.
