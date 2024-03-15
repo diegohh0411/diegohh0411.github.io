@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import {mappings} from "../../content/mappings";
 import {LazyLoadImageModule} from "ng-lazyload-image";
-import { CommonModule} from "@angular/common";
+import { CommonModule, Location } from "@angular/common";
 
 @Component({
   selector: 'app-gallery',
@@ -20,7 +20,8 @@ export class GalleryComponent {
   filename: string = ''
   postMapping: any = {}
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {
     this.route.params.subscribe(params => {
       this.postUuid = params['uuid']
@@ -54,6 +55,13 @@ export class GalleryComponent {
         this.goingToSetToTrue = false
       }
     }, 500)
+
+    const urlSafeFilename = this.postMapping.imageFilenames[newIndex].replace('.', '%252E')
+
+    console.log(urlSafeFilename)
+    this.location.replaceState(
+      `/g/${this.postMapping.uuid}/${urlSafeFilename}`,
+    )
   }
 
   get height(): string {

@@ -9,7 +9,6 @@ const mappings = []
 const folders = fs.readdirSync('./src/content', { withFileTypes: true })
   .filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name);
-console.log(folders)
 
 function isUUIDWithIndex(str) {
   // Regular expression to validate UUID format
@@ -29,20 +28,19 @@ folders.forEach(folder => {
       }
 
       index['imageFilenames'] = []
-      const imageEndings = ['.jpg', '.JPG', '.png', '.PNG', '.tiff', '.TIFF', '.tif', '.TIF']
-      files.forEach((file, i) => {
-        if (imageEndings.some(ending => file.endsWith(ending))) {
-          if (!isUUIDWithIndex(file.substring(0, file.length - 4))) {
-            const newFileName = `${i.toString().padStart(4, '0')}-${crypto.randomUUID()}.${file.slice(-3)}`
-            fs.rename(`./src/content/${folder}/${file}`, `./src/content/${folder}/${newFileName}`, (err) => {
+      const imageEndings = ['.jpg', '.JPG', '.png', '.PNG', '.tif', '.TIF']
+      files.forEach((filename, i) => {
+        if (imageEndings.some(ending => filename.endsWith(ending))) {
+          if (!isUUIDWithIndex(filename.substring(0, filename.length - 4))) {
+            const newFileName = `${i.toString().padStart(4, '0')}-${crypto.randomUUID()}.${filename.slice(-3)}`
+            fs.rename(`./src/content/${folder}/${filename}`, `./src/content/${folder}/${newFileName}`, (err) => {
               if (err) throw err;
-              console.log(`File [${file}] renamed to [${newFileName}]`)
+              console.log(`File [${filename}] renamed to [${newFileName}]`)
             })
 
             index['imageFilenames'].push(newFileName)
           } else {
-            console.log(index)
-            index['imageFilenames'].push(file)
+            index['imageFilenames'].push(filename)
           }
         }
       })

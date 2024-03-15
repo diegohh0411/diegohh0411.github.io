@@ -54,13 +54,25 @@ export class PostComponent implements OnInit, OnDestroy {
     }
 
     this.postMapping.publishDateISO8601 = new Date(this.postMapping.publishDateISO8601)
+
+    this.postMapping.imageObjects = this.postMapping.imageFilenames.map((filename: string) => {
+      return {
+        filename: filename,
+        loaded: false,
+        left: {
+          md: `${Math.random() * 50 + 15}%`,
+          base: `${Math.random() * 23}%`
+        },
+        top: {
+          base: `${Math.random() * 20 + 10}svh`
+        }
+      }
+    })
   }
 
   get md() {
     return window.innerWidth >= 768
   }
-
-  protected readonly math = Math;
 
   hintIsHidden = false
   async ngOnInit() {

@@ -85,17 +85,17 @@ bg-white dark:bg-gray-800
     <div class="
     flex items-center justify-center
     p-2 rounded-l-2xl
-    bg-gray-200 dark:bg-gray-600
+    bg-gray-100 dark:bg-gray-600
     cursor-pointer
     "
     (click)="move('prev')"
     [ngClass]="[
       currentIndex === 0 || loading
       ?
-      'opacity-40'
+      'opacity-20 cursor-not-allowed'
       :
-      'hover:bg-gray-300 active:bg-gray-400 ' +
-      'dark:hover:bg-gray-500 dark:active:bg-gray-400'
+      'hover:bg-gray-200 active:bg-gray-300 ' +
+      'dark:hover:bg-gray-600 dark:active:bg-gray-500'
     ]"
     >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -106,17 +106,17 @@ bg-white dark:bg-gray-800
     <div class="
     flex items-center justify-center
     p-2 rounded-r-2xl
-    bg-gray-200 dark:bg-gray-600
+    bg-gray-100 dark:bg-gray-700
     cursor-pointer
     "
     (click)="move('next')"
     [ngClass]="[
       currentIndex === postMapping.imageFilenames.length - 1 || loading
       ?
-      'opacity-40'
+      'opacity-20 cursor-not-allowed'
       :
-      'hover:bg-gray-300 active:bg-gray-400 ' +
-      'dark:hover:bg-gray-500 dark:active:bg-gray-400'
+      'hover:bg-gray-200 active:bg-gray-300 ' +
+      'dark:hover:bg-gray-600 dark:active:bg-gray-500'
     ]"
     >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

@@ -36,6 +36,8 @@ export class ArchiveComponent implements OnInit {
         }
       })
     })
+
+    window.scrollTo(0, window.scrollY);
   }
 
   appliedTags: string[] = []
