@@ -10,15 +10,9 @@ Esta *Bitácora de Santiago* es una transcripción de los audios que grabé dura
 
 # Domingo 23 de Julio del 2023
 
-##### Audio 1
-
 ### 07:44 AM en Portomarín, España
 
 ¿Qué onda, familia? Este... oigan, pues ayer se me fue la onda completamente mandarles audio. Y la verdad es que cada vez... bueno no... bueno, sí; cada vez está un poquito más difícil encontrar dónde mandarles un audio porque usualmente se los mando cuando ya es nochecita y la gente está durmiendo y los hostales se están volviendo más comunales. O sea, cuando nos quedamos en Schoenstatt teníamos varios cuartos y la gente, por cuartos, no era tanta. Pero, por ejemplo, anoche nos dormimos en un hostal que era un solo cuarto y tenía 130 camas el cuarto entero. Era como un cuarto grande, como una sala. Entonces, literalmente todo mundo dormimos en el mismo cuarto. Y los hostales cierran las puertas a las 10:30. O sea, después de las 10:30, si te quedaste fuera ya no puedes entrar. Pues, porque todo mundo en El Camino de Santiago se tiene que dormir temprano y levantarse muy temprano, no? Acá son las 7:45 de la mañana, estamos cerca de comenzar a caminar el tramo que nos toca caminar hoy, que son como 25 kilómetros y la verdad es que ayer estuvo fenomenal.
-
----
-
-##### Audio 2
 
 ### 7:46 AM en Portomarín, España
 
@@ -34,9 +28,6 @@ Estuvo bien interesante porque, al momento de leer el Evangelio pues lo leyeron 
 
 Y ya, la verdad es que no tuvimos tiempo de cenar en un restaurante bien porque como que acá cierran todo bien temprano. A las 9 ya no había ningún restaurante abierto ni supermercado. Entonces, nos dormimos. Yo me terminé durmiendo como a las 12:30. Ya nos levantamos hace rato y estamos listos para el siguiente tramo. Ayer hicimos 23 kilómetros. Hoy vamos a hacer como 25, en teoría. Está muy, muy fresco el clima. Está frío. Sí me tengo que poner mi chaqueta pero está muy rico. Y amanecimos como con... ¿cómo se dice en español *"fog"*? Amanecimos con... neblina entonces se ve todo precioso. Pero, bueno, déjenme les paso los videos y las fotos de ayer para que vean lo bonito que estaba todo.
 
----
-
-##### Audio 3
 
 ### 7:52 en Portomarín, España
 

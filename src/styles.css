@@ -6,15 +6,15 @@
 @tailwind utilities;
 
 h1 {
-  @apply font-mono text-5xl
+  @apply font-mono text-6xl
 }
 
 h3 {
   @apply text-xl font-bold
 }
 
-h5 {
-  @apply text-sm font-bold bg-gray-200 dark:bg-gray-600 w-fit px-3 rounded-full
+p {
+  @apply text-xl
 }
 
 hr {
@@ -22,9 +22,12 @@ hr {
 }
 
 .markdown {
-  @apply flex flex-col gap-3
+  @apply flex flex-col gap-6
 }
 
 .markdown p {
-  @apply mb-3 leading-10
+  @apply leading-10
 }
+
+
+
