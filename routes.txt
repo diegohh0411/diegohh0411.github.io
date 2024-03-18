@@ -1,3 +1,4 @@
+/p/82be111d-2336-43e6-af08-ca648def4a5d
 /p/abr2023
 /g/abr2023/0000-d7d96a8d-936d-4c02-baa7-3528d93de8de.jpg
 /g/abr2023/0001-f8a568af-5921-4c96-af87-d7ce3a424d51.jpg
@@ -178,7 +179,7 @@
 /g/olympus2/0059-5ea0db40-f8bd-4019-91d4-bc8367273884.tif
 /g/olympus2/0060-d7daab4a-1deb-4727-b4e8-1957ace46e7d.tif
 /g/olympus2/0061-25f347f2-6d7a-45bf-be02-778a9dacfb46.tif
-/g/olympus2/0062-abcc19de-1762-4ee5-9be5-a63bd5131fd6.tif
+/g/olympus2/0062-abcc19de-1762-4ee5-9be5-a63bd5131fd6.jpg
 /g/olympus2/0063-2d0b11d6-cf89-4636-b0ab-b174de9dcd93.tif
 /g/olympus2/0064-37b1afb8-8115-41c2-9dc5-011a984fbc4d.tif
 /g/olympus2/0065-39b1d681-178f-43fa-92b2-ec3760b1f3e7.tif
